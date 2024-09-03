@@ -12,11 +12,11 @@ services:
     volumes:
       - fleet-server:/usr/share/elastic-agent/state:Z
       - type: bind
-        source: /var/lib/docker/containers
+        source: /home/vantm/.local/share/docker/containers
         target: /var/lib/docker/containers
         read_only: true
       - type: bind
-        source: /var/run/docker.sock
+        source: /run/user/1000/docker.sock
         target: /var/run/docker.sock
         read_only: true
     environment:
